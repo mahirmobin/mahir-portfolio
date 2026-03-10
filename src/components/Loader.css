@@ -1,0 +1,99 @@
+/* FULL-SCREEN LOADER */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+}
+
+/* The two halves that split apart */
+.loader-half {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: var(--ink);
+  transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+  z-index: 1;
+}
+
+.loader-top {
+  top: 0;
+  transform-origin: top center;
+}
+
+.loader-bottom {
+  bottom: 0;
+  transform-origin: bottom center;
+}
+
+/* When the 'is-opening' class triggers, the halves slide apart */
+.is-opening .loader-top {
+  transform: translateY(-100%);
+}
+
+.is-opening .loader-bottom {
+  transform: translateY(100%);
+}
+
+/* The centered logo text */
+.loader-logo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: loaderFadeIn 0.8s ease 0.2s forwards;
+}
+
+.is-opening .loader-logo {
+  animation: loaderFadeOut 0.4s ease forwards;
+}
+
+.loader-mm {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(5rem, 12vw, 10rem);
+  font-weight: 800;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.loader-mm span {
+  color: var(--accent);
+}
+
+.loader-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+@keyframes loaderFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes loaderFadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,105 @@
+#work {
+  border-top: 1px solid var(--soft);
+}
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 5rem;
+}
+.work-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.work-heading em { font-style: italic; color: var(--accent); }
+.work-count {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.projects-list {}
+.project-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: start;
+  gap: 2.5rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--soft);
+  cursor: none;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+.project-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width 0.5s ease;
+}
+.project-item:hover::after { width: 100%; }
+.project-item:hover .project-num { color: var(--accent); }
+.project-item:hover .project-arrow { transform: translateX(6px); opacity: 1; }
+
+.project-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--light-muted);
+  transition: color 0.3s;
+  padding-top: 0.2rem;
+}
+.project-body {}
+.project-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
+  transition: color 0.2s;
+}
+.project-desc {
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 1rem;
+}
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.project-tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  background: var(--soft);
+  color: var(--muted);
+}
+.project-tag.accent-tag {
+  background: rgba(200, 80, 42, 0.1);
+  color: var(--accent);
+}
+.project-arrow {
+  font-size: 1.2rem;
+  color: var(--accent);
+  opacity: 0;
+  transition: all 0.3s;
+  padding-top: 0.2rem;
+  align-self: center;
+}
+
+@media (max-width: 900px) {
+  .project-item { grid-template-columns: 50px 1fr; }
+  .project-arrow { display: none; }
+}

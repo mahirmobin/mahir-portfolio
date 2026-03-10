@@ -1,0 +1,229 @@
+.internships-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.fade-in-page {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.internships-nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.5rem 4rem;
+  background: rgba(235, 235, 232, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.back-btn {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+.back-btn:hover {
+  color: var(--accent);
+  transform: translateX(-4px);
+}
+
+.internships-hero {
+  padding: 10rem 4rem 4rem 4rem;
+}
+
+.internships-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.internships-heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.internships-desc {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 600px;
+}
+
+/* TREE TIMELINE LAYOUT STYLES */
+.internships-tree-container {
+  padding: 2rem 4rem 8rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.internships-tree-container .section-label {
+  margin-bottom: 5rem;
+  align-self: flex-start;
+}
+
+.internships-tree {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* The vertical line running down the center */
+.tree-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--soft);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.tree-node {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50%;
+  position: relative;
+  margin-bottom: 6rem;
+  width: 100%;
+}
+
+.tree-node.right {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 50%;
+}
+
+.tree-node:last-child {
+  margin-bottom: 0;
+}
+
+/* The dot intersecting the central line */
+.tree-dot {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 4px solid var(--background);
+  z-index: 2;
+  box-shadow: 0 0 0 1px var(--soft);
+}
+
+.tree-content {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tree-node.left .tree-content {
+  padding-right: 3rem;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.tree-node.right .tree-content {
+  padding-left: 3rem;
+  align-items: flex-flex-start;
+  text-align: left;
+}
+
+/* IMAGE TREATMENT: Mix-blend-mode to drop out light backgrounds */
+.gallery-img-wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.tree-node.left .gallery-img-wrapper {
+  justify-content: flex-end;
+}
+
+.tree-node.right .gallery-img-wrapper {
+  justify-content: flex-start;
+}
+
+.gallery-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* THE MAGIC: Drops out the white/grey backing seamlessly against the web page background */
+.blend-image {
+  mix-blend-mode: multiply;
+  filter: contrast(1.05) saturate(1.1); /* Subtle boost to compensate for multiply dimming */
+}
+
+.tree-node:hover .gallery-image {
+  transform: scale(1.02);
+}
+
+.gallery-caption {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: -0.01em;
+}
+
+/* MOBILE TREE FALLBACK */
+@media (max-width: 900px) {
+  .internships-hero, .internships-nav, .internships-tree-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .tree-line {
+    left: 0;
+  }
+
+  .tree-node {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .tree-node.right {
+    padding-left: 2rem;
+  }
+
+  .tree-dot {
+    left: 0;
+  }
+
+  .tree-content {
+    width: 100%;
+  }
+
+  .tree-node.left .tree-content,
+  .tree-node.right .tree-content {
+    padding-right: 0;
+    padding-left: 1rem;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .tree-node.left .gallery-img-wrapper,
+  .tree-node.right .gallery-img-wrapper {
+    justify-content: flex-start;
+  }
+}

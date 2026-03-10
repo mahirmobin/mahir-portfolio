@@ -1,0 +1,38 @@
+.home-page {
+  /* Ensure the home page doesn't hide the global background */
+  position: relative;
+  z-index: 1;
+}
+
+/* GLOBAL BACKGROUND SVG TEXT */
+.global-bg-svg {
+  position: fixed; /* Ensures it stays in viewport while scrolling */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150vw; /* Make it massive to span behind everything */
+  height: auto;
+  min-height: 80vh;
+  z-index: -1; /* Send it all the way to the back */
+  pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 1.5s ease 0.2s forwards;
+}
+
+.global-anim-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 350px;
+  fill: transparent;
+  stroke: var(--soft);
+  stroke-width: 2px;
+  /* Dash array needs to be at least as long as the stroke length (roughly 2500) */
+  stroke-dasharray: 2500;
+  /* Will be controlled by React state over scroll */
+  stroke-dashoffset: 2500;
+  letter-spacing: -0.05em;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  -webkit-user-select: none;
+  user-select: none;
+}
