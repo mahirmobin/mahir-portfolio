@@ -147,10 +147,10 @@
   #hero {
     min-height: 100svh;
     padding: 0 1.25rem;
-    align-content: end;
+    align-content: center;
   }
   .hero-left {
-    padding-bottom: 5rem;
+    padding-top: 2rem;
   }
   .hero-eyebrow {
     font-size: 0.55rem;
