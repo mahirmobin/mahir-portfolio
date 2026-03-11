@@ -79,13 +79,19 @@ nav {
   }
 
   .nav-links {
+    display: flex;
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    background: var(--cream);
+    background: #F5F0E8;
     z-index: 9998;
     opacity: 0;
     pointer-events: none;
