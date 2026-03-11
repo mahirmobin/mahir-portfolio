@@ -138,7 +138,7 @@
 
 .tree-node.right .tree-content {
   padding-left: 3rem;
-  align-items: flex-flex-start;
+  align-items: flex-start;
   text-align: left;
 }
 
@@ -179,7 +179,7 @@
   letter-spacing: -0.01em;
 }
 
-/* MOBILE TREE FALLBACK */
+/* =========== TABLET =========== */
 @media (max-width: 900px) {
   .freelance-hero, .freelance-tree-container {
     padding-left: 2rem;
@@ -224,5 +224,47 @@
   .tree-node.left .gallery-img-wrapper,
   .tree-node.right .gallery-img-wrapper {
     justify-content: flex-start;
+  }
+}
+
+/* =========== PHONE =========== */
+@media (max-width: 480px) {
+  .freelance-hero {
+    padding: 7rem 1.25rem 2rem 1.25rem;
+  }
+  .back-btn {
+    top: 5rem;
+    left: 1.25rem;
+    font-size: 0.8rem;
+  }
+  .freelance-heading {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-top: 1.5rem;
+  }
+  .freelance-desc {
+    font-size: 0.9rem;
+    margin-top: 1.25rem;
+    max-width: 100%;
+  }
+  .freelance-tree-container {
+    padding: 1rem 1.25rem 4rem 1.25rem;
+  }
+  .freelance-tree-container .section-label {
+    margin-bottom: 3rem;
+  }
+  .tree-node {
+    padding-left: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .tree-node.right {
+    padding-left: 1.5rem;
+  }
+  .tree-node.left .tree-content,
+  .tree-node.right .tree-content {
+    padding-left: 0.75rem;
+    gap: 1rem;
+  }
+  .gallery-caption {
+    font-size: 0.75rem;
   }
 }

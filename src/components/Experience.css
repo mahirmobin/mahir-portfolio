@@ -50,6 +50,28 @@
   color: var(--muted);
 }
 
+/* =========== TABLET =========== */
 @media (max-width: 900px) {
   #experience { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* =========== PHONE =========== */
+@media (max-width: 480px) {
+  .exp-heading {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  .exp-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+  }
+  .exp-period {
+    font-size: 0.6rem;
+  }
+  .exp-role {
+    font-size: 0.85rem;
+  }
+  .exp-detail {
+    font-size: 0.7rem;
+  }
 }

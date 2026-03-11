@@ -110,11 +110,6 @@
   }
 }
 
-
-
-
-
-
 /* SCROLL INDICATOR */
 .scroll-line {
   position: absolute;
@@ -141,7 +136,38 @@
   animation: scrollPulse 2s ease-in-out infinite;
 }
 
+/* =========== TABLET =========== */
 @media (max-width: 900px) {
   #hero { grid-template-columns: 1fr; padding: 0 2rem; }
   .hero-right { display: none; }
+}
+
+/* =========== PHONE =========== */
+@media (max-width: 480px) {
+  #hero {
+    min-height: 100svh;
+    padding: 0 1.25rem;
+    align-content: end;
+  }
+  .hero-left {
+    padding-bottom: 5rem;
+  }
+  .hero-eyebrow {
+    font-size: 0.55rem;
+    margin-bottom: 1rem;
+  }
+  .hero-name {
+    font-size: clamp(2.8rem, 12vw, 4.5rem);
+  }
+  .hero-descriptor {
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    max-width: 100%;
+  }
+  .hero-cta {
+    margin-top: 2rem;
+  }
+  .scroll-line {
+    display: none;
+  }
 }

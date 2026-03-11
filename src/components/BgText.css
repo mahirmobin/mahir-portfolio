@@ -103,3 +103,14 @@
     font-size: clamp(2rem, 10vw, 6rem) !important;
   }
 }
+
+@media (max-width: 480px) {
+  .bg-text-item {
+    font-size: clamp(1.5rem, 8vw, 4rem) !important;
+    -webkit-text-stroke: 0.5px var(--soft);
+  }
+  /* Hide some to reduce clutter on small screens */
+  .bg-c, .bg-e, .bg-f {
+    display: none;
+  }
+}

@@ -96,11 +96,6 @@ section {
   transform: none;
 }
 
-/* RESPONSIVE BASE */
-@media (max-width: 900px) {
-  section { padding: 5rem 2rem; }
-}
-
 /* GLOBAL LIGHTBOX OVERLAY */
 .lightbox-overlay {
   position: fixed;
@@ -142,4 +137,34 @@ section {
 
 .lightbox-close:hover {
   color: var(--accent);
+}
+
+/* =========== TOUCH DEVICE: hide custom cursor, restore default =========== */
+@media (hover: none) and (pointer: coarse) {
+  body { cursor: auto; }
+  a, button, [style*="cursor"] { cursor: auto !important; }
+}
+
+/* =========== TABLET BREAKPOINT =========== */
+@media (max-width: 900px) {
+  section { padding: 5rem 2rem; }
+}
+
+/* =========== PHONE BREAKPOINT =========== */
+@media (max-width: 480px) {
+  html { font-size: 15px; }
+  section { padding: 3.5rem 1.25rem; }
+
+  .section-bg {
+    -webkit-text-stroke: 1px var(--soft);
+    opacity: 0.35;
+  }
+
+  .section-label {
+    font-size: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .lightbox-overlay { padding: 0.75rem; }
+  .lightbox-close { top: 1rem; right: 1.25rem; font-size: 2.2rem; }
 }
