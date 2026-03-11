@@ -13,7 +13,7 @@ const Experience = ({ setCurrentPage }) => {
       </div>
       <div className="exp-list reveal" style={{ transitionDelay: '0.1s' }}>
         <div className="exp-item interactive-exp" onClick={() => setCurrentPage?.('internships')} style={{ cursor: 'pointer' }}>
-          <div className="exp-period">May – Jun 2026</div>
+          <div className="exp-period">May – Jun 2025</div>
           <div>
             <div className="exp-role" style={{ color: 'var(--ink)', textDecoration: 'underline', textDecorationColor: 'var(--soft)' }}>
               Multimedia Design Intern ↗
@@ -33,7 +33,7 @@ const Experience = ({ setCurrentPage }) => {
           </div>
         </div>
         <div className="exp-item">
-          <div className="exp-period">Jul 2026 – Present</div>
+          <div className="exp-period">Aug 2025 – Present</div>
           <div>
             <div className="exp-role">Design Co-Lead</div>
             <div className="exp-org">ACM FISAT</div>
